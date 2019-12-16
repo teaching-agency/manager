@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.lingxue.model.common.CommonRspVo;
 import com.lingxue.model.common.MyPage;
+import com.lingxue.model.constants.ResponseCodeEnum;
 import com.lingxue.model.entity.SysDict;
 import com.lingxue.service.ISysDictService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,10 @@ public class SysDictController {
      */
     @PostMapping
     public CommonRspVo<Boolean> add(@RequestBody SysDict sysDict) {
+        //默认判断是操作成功
+        if(!sysDictService.save(sysDict)){
+            return new CommonRspVo<>(sysDictService.save(sysDict),ResponseCodeEnum.SYSTEM_ERROR);
+        }
         return new CommonRspVo<>(sysDictService.save(sysDict));
     }
 
