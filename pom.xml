@@ -19,6 +19,18 @@
     </properties>
 
     <dependencies>
+        <!--jwt用来做token令牌码-->
+         <dependency>
+             <groupId>io.jsonwebtoken</groupId>
+             <artifactId>jjwt</artifactId>
+            <version>0.9.0</version>
+        </dependency>
+        <!--阿里 FastJson依赖-->
+         <dependency>
+             <groupId>com.alibaba</groupId>
+             <artifactId>fastjson</artifactId>
+             <version>1.2.44</version>
+        </dependency>
         <!--Lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -43,11 +55,13 @@
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
         </dependency>
+        <!--连接mysql-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <!--springboot自带测试jar包-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
