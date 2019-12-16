@@ -37,6 +37,11 @@ public class SysCompanyController {
     @PostMapping(value = "add")
     public CommonRspVo<Boolean> CompanyAdd(@RequestBody SysCompany sysCompany){
         LOGGER.info("成功进入公司添加接口！！！");
+
+        //判断必传值不能为null
+        if(sysCompany.getAddress() == null || sysCompany.getCompanyName() == null || sysCompany.getCompanyPhone() == null || sysCompany.getLegalPersionName() == null){
+            return new CommonRspVo<>(false,ResponseCodeEnum.SYSTEM_ERROR_NULL);
+        }
         //默认判断是操作成功
         try {
             return new CommonRspVo<>(iSysCompanyService.save(sysCompany));

@@ -10,6 +10,12 @@ public enum ResponseCodeEnum {
      * 系统异常，可在9000---9998之间添加详细系统异常码
      */
     SYSTEM_ERROR("9999","SYSTEM ERROR!"),
+
+    /**
+     *必传项有为null
+     */
+    SYSTEM_ERROR_NULL("9998","SYSTEM_ERROR_NULL"),
+
     /**
      * mysql 相关错误，可在8000---9000添加详细错误码
      */
