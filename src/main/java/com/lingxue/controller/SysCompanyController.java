@@ -3,6 +3,7 @@ package com.lingxue.controller;
 import com.lingxue.model.common.CommonRspVo;
 import com.lingxue.model.constants.ResponseCodeEnum;
 import com.lingxue.model.entity.SysCompany;
+import com.lingxue.model.util.NotNullUtil;
 import com.lingxue.service.ISysCompanyService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,10 +39,12 @@ public class SysCompanyController {
     public CommonRspVo<Boolean> CompanyAdd(@RequestBody SysCompany sysCompany){
         LOGGER.info("成功进入公司添加接口！！！");
 
+        NotNullUtil<SysCompany,String> notNullUtil = new NotNullUtil<>();
+
         //判断必传值不能为null
-        if(sysCompany.getAddress() == null || sysCompany.getCompanyName() == null || sysCompany.getCompanyPhone() == null || sysCompany.getLegalPersionName() == null){
+        if(notNullUtil.notNullCheck(sysCompany,"add"))
             return new CommonRspVo<>(false,ResponseCodeEnum.SYSTEM_ERROR_NULL);
-        }
+
         //默认判断是操作成功
         try {
             return new CommonRspVo<>(iSysCompanyService.save(sysCompany));

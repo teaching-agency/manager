@@ -83,6 +83,12 @@ public class SysCompany extends BaseEntity {
     @TableField("TOKEN")
     private String token;
 
+    /**
+     *密码
+     */
+    @TableField("COMPANY_PASS")
+    private String companyPass;
+
     @Override
     protected Serializable pkVal() {
         return this.companyId;
