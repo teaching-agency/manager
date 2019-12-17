@@ -29,6 +29,8 @@ public class NotNullUtil<T,E> {
                         return true;
                     if(StringUtils.isEmpty(sysCompany.getCompanyPass()))
                         return true;
+                    if(StringUtils.isEmpty(sysCompany.getVerifyCode()))
+                        return true;
                     break;
                 case "update":
                     if(StringUtils.isEmpty(sysCompany.getCompanyPass()))

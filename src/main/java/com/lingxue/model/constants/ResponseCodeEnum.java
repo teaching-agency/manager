@@ -17,6 +17,11 @@ public enum ResponseCodeEnum {
     SYSTEM_ERROR_NULL("9998","SYSTEM_ERROR_NULL"),
 
     /**
+     *验证码时间校验
+     */
+    SYSTEM_CODE_TIME_OUT("9997","SYSTEM_CODE_TIME_OUT"),
+
+    /**
      * mysql 相关错误，可在8000---9000添加详细错误码
      */
     MYSQL_ERROR("8000","MYSQL ERROR!"),

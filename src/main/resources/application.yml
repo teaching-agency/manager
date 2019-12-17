@@ -6,8 +6,20 @@ spring:
       password:
       driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://192.168.214.1:3306/manager?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+  #163邮箱配置
+  mail:
+    host: smtp.163.com #邮箱配置地址
+    username: Wmz19960224@163.com #用户名
+    password: 84471386ZHI #开启POP3之后设置的客户端授权码
+    default-encoding: UTF-8
+    #超时时间（可选）
+
 mybatis-plus:
   type-aliases-package: com.linguxe.model.entity
   mapper-locations: classpath:mappers/*.xml
 server:
   port: 9091
+
+#自定义通用值
+customize:
+  emailTo: 1277383416@qq.com
