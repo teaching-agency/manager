@@ -90,6 +90,12 @@ public class SysCompany extends BaseEntity {
     private String companyPass;
 
     /**
+     *法人身份证号
+     */
+    @TableField("COMPANY_USER_ID_CARD")
+    private String companyUserIdCard;
+
+    /**
      *验证码：只做用户注册一次使用，不加以保存
      */
     private String verifyCode;

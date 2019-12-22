@@ -19,7 +19,7 @@ public class NotNullUtil<T,E> {
         //只需要区分文件名
         String value = data.getClass().getName().substring(last+1);
 
-        if(value.equals("SysCompany")){
+        if(value.equals("SysCompany")){   //判断企业信息
 
             SysCompany sysCompany = (SysCompany) data;
 
@@ -39,6 +39,9 @@ public class NotNullUtil<T,E> {
                     default:
                         return true;
             }
+        }else if(type.equals("AuthenFilter_token")){  //判断登陆，token信息
+            if (StringUtils.isEmpty(data))
+                return true;
         }
         return false;
     }

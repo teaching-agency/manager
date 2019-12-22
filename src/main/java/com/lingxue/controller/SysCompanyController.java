@@ -14,6 +14,9 @@ import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import static com.lingxue.model.util.WebUrlMappingConst.URL_COMPANY_LOGIN;
+import static com.lingxue.model.util.WebUrlMappingConst.URL_COMPANY_REGISTERED;
+
 /**
  *@Author Wisdom
  *@date 2019/12/16 17:46
@@ -32,11 +35,12 @@ public class SysCompanyController {
     /**
      *@Author 86151
      *@Date 2019/12/16 19:36
-     *Description 公司用户=======》注册
+     *Description 公司企业=======》注册
      @Param
      *return
      */
-    @PostMapping(value = "add")
+    @PostMapping(value = URL_COMPANY_REGISTERED)
+    @ResponseBody
     public CommonRspVo<Boolean> CompanyAdd(@RequestBody SysCompany sysCompany, HttpSession session){
         LOGGER.info("成功进入公司添加接口！！！");
 
@@ -52,6 +56,10 @@ public class SysCompanyController {
         //判断验证码是否超时
         if(!sysCompany.getVerifyCode().equals(emailCode))
             return new CommonRspVo<>(false,ResponseCodeEnum.SYSTEM_CODE_TIME_OUT);
+
+        //判断是否已经注册过此企业
+        if (iSysCompanyService.getById(sysCompany.getCompanyUserIdCard()) != null)
+            return new CommonRspVo<>(false,ResponseCodeEnum.SYSTEM_ERROR_EXIST);
 
         //默认判断是操作成功
         try {
@@ -82,6 +90,29 @@ public class SysCompanyController {
             e.printStackTrace();
             LOGGER.error("接口异常");
         }
+        return new CommonRspVo<>(false,ResponseCodeEnum.SYSTEM_ERROR);
+    }
+
+    /**
+     *@Author 86151
+     *@Date 2019/12/22 18:54
+     *Description 公司企业=============》》》登陆
+     @Param
+     *return
+     */
+    @PostMapping(value = URL_COMPANY_LOGIN)
+    @ResponseBody
+    public CommonRspVo<Boolean> CompanyLogin(@RequestBody SysCompany sysCompany){
+
+        LOGGER.info("成功进入登陆接口！！！");
+
+        try {
+
+        }catch (Exception e){
+            e.printStackTrace();
+            LOGGER.error("接口异常");
+        }
+
         return new CommonRspVo<>(false,ResponseCodeEnum.SYSTEM_ERROR);
     }
 }

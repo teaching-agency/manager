@@ -17,6 +17,11 @@ public enum ResponseCodeEnum {
     SYSTEM_ERROR_NULL("9998","SYSTEM_ERROR_NULL"),
 
     /**
+     *已存在
+     */
+    SYSTEM_ERROR_EXIST("9997","SYSTEM_ERROR_EXIST"),
+
+    /**
      *验证码时间校验
      */
     SYSTEM_CODE_TIME_OUT("9997","SYSTEM_CODE_TIME_OUT"),
