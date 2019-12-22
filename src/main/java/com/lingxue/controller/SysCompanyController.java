@@ -1,5 +1,8 @@
 package com.lingxue.controller;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.segments.MergeSegments;
 import com.lingxue.model.common.CommonRspVo;
 import com.lingxue.model.constants.ResponseCodeEnum;
 import com.lingxue.model.entity.SysCompany;
@@ -106,7 +109,12 @@ public class SysCompanyController {
 
         LOGGER.info("成功进入登陆接口！！！");
 
+        Wrapper<SysCompany> sysCompanyQueryWrapper = new QueryWrapper<>(sysCompany);
+
         try {
+            //判断是否存在
+            if (iSysCompanyService.getOne(sysCompanyQueryWrapper) != null)
+                return new CommonRspVo<>(true,ResponseCodeEnum.SUCCESS);
 
         }catch (Exception e){
             e.printStackTrace();
