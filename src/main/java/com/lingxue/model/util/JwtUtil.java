@@ -53,8 +53,8 @@ public class JwtUtil {
                 .setSubject("System")  //说明
                 .setIssuer("anqin")   //签发者信息
                 .setAudience("custom")   //接收者
+                .signWith(SignatureAlgorithm.HS256, encryKey) //加密方式
                 .compressWith(CompressionCodecs.GZIP)   //数据已压缩包的方式
-                .signWith(SignatureAlgorithm.ES256,encryKey) //加密方式
                 .setExpiration(new Date(currentTime + Token_DayTimeOut * 1000)) //过期时间，默认超过30分钟就宕机
                 .addClaims(claimMaps)  //cla信息
                 .compact();
@@ -70,7 +70,7 @@ public class JwtUtil {
 
     public static String getSignature(String token, String encryKey){
         try {
-            return getJws(token,encryKey).getSignature();
+            return getJws(token).getSignature();
         }catch (Exception e){
             return "";
         }
@@ -85,7 +85,7 @@ public class JwtUtil {
      */
     public static JwsHeader getHeader(String token, String encryKey){
         try {
-            return getJws(token, encryKey).getHeader();
+            return getJws(token).getHeader();
         }catch (Exception e){
             return null;
         }
@@ -99,7 +99,7 @@ public class JwtUtil {
      *return
      */
     public static Claims getClaimsBody(String token, String encryKey){
-        return getJws(token,encryKey).getBody();
+        return getJws(token).getBody();
     }
 
     /**
@@ -109,8 +109,8 @@ public class JwtUtil {
      @Param
      *return
      */
-    public static Object getVal(String token, String encryKey, String key){
-        return getJws(token,encryKey).getBody().get(key);
+    public static Object getVal(String token, String key){
+        return getJws(token).getBody().get(key);
     }
 
     /**
@@ -120,9 +120,9 @@ public class JwtUtil {
      @Param
      *return
      */
-    public static <T> T getValByT(String token, String encryKey, String key, Class<T> tClass){
+    public static <T> T getValByT(String token, String key, Class<T> tClass){
         try {
-            String strJson = (String) getVal(token,encryKey,key);
+            String strJson = (String) getVal(token,key);
 
             return JSON.parseObject(strJson,tClass);
         }catch (Exception e){
@@ -155,9 +155,8 @@ public class JwtUtil {
         }
     }
 
-    private static Jws<Claims> getJws(String token, String encryKey){
+    private static Jws<Claims> getJws(String token){
         return Jwts.parser()
-                .setSigningKey(encryKey)
                 .parseClaimsJws(token);
     }
 }

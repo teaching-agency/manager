@@ -24,7 +24,7 @@ public class NotNullUtil<T,E> {
             SysCompany sysCompany = (SysCompany) data;
 
             switch (type.toString()){
-                case "add":
+                case "registered":
                     if(StringUtils.isEmpty(sysCompany.getCompanyPhone()))
                         return true;
                     if(StringUtils.isEmpty(sysCompany.getCompanyPass()))
@@ -32,16 +32,17 @@ public class NotNullUtil<T,E> {
                     if(StringUtils.isEmpty(sysCompany.getVerifyCode()))
                         return true;
                     break;
-                case "update":
+                case "login":
                     if(StringUtils.isEmpty(sysCompany.getCompanyPass()))
+                        return true;
+                    if (StringUtils.isEmpty(sysCompany.getCompanyPhone()))
+                        return true;
+                    if (StringUtils.isEmpty(sysCompany.getCompanyUserIdCard()))
                         return true;
                     break;
                     default:
                         return true;
             }
-        }else if(type.equals("AuthenFilter_token")){  //判断登陆，token信息
-            if (StringUtils.isEmpty(data))
-                return true;
         }
         return false;
     }

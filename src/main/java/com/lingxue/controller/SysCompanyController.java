@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.segments.MergeSegments;
 import com.lingxue.model.common.CommonRspVo;
 import com.lingxue.model.constants.ResponseCodeEnum;
 import com.lingxue.model.entity.SysCompany;
+import com.lingxue.model.util.JwtUtil;
 import com.lingxue.model.util.NotNullUtil;
 import com.lingxue.service.ISysCompanyService;
 import org.slf4j.Logger;
@@ -17,6 +18,11 @@ import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.lingxue.model.constants.CommonConstant.Login_Company_Key;
+import static com.lingxue.model.constants.CommonConstant.Token_EncryKey;
 import static com.lingxue.model.util.WebUrlMappingConst.URL_COMPANY_LOGIN;
 import static com.lingxue.model.util.WebUrlMappingConst.URL_COMPANY_REGISTERED;
 
@@ -50,7 +56,7 @@ public class SysCompanyController {
         NotNullUtil<SysCompany,String> notNullUtil = new NotNullUtil<>();
 
         //判断必传值不能为null
-        if(notNullUtil.notNullCheck(sysCompany,"add"))
+        if(notNullUtil.notNullCheck(sysCompany,"registered"))
             return new CommonRspVo<>(false,ResponseCodeEnum.SYSTEM_ERROR_NULL);
 
         //获取验证码
@@ -105,22 +111,37 @@ public class SysCompanyController {
      */
     @PostMapping(value = URL_COMPANY_LOGIN)
     @ResponseBody
-    public CommonRspVo<Boolean> CompanyLogin(@RequestBody SysCompany sysCompany){
+    public CommonRspVo<String> CompanyLogin(@RequestBody SysCompany sysCompany){
 
         LOGGER.info("成功进入登陆接口！！！");
 
         Wrapper<SysCompany> sysCompanyQueryWrapper = new QueryWrapper<>(sysCompany);
 
+        //判断必传项是否为null
+        NotNullUtil<SysCompany,String> notNullUtil = new NotNullUtil<>();
+
+        if (notNullUtil.notNullCheck(sysCompany,"login"))
+            return new CommonRspVo<>(String.valueOf(false),ResponseCodeEnum.SYSTEM_ERROR_NULL);
+
         try {
             //判断是否存在
-            if (iSysCompanyService.getOne(sysCompanyQueryWrapper) != null)
-                return new CommonRspVo<>(true,ResponseCodeEnum.SUCCESS);
+            if (iSysCompanyService.getOne(sysCompanyQueryWrapper) != null){
+                //存放token
+                Map<String,Object> map = new HashMap<>();
+                map.put(Login_Company_Key,sysCompany);
 
+                //存放入JwtUtil
+                JwtUtil.getTokenByJson(map,Token_EncryKey);
+
+                LOGGER.info(JwtUtil.getTokenByJson(map,Token_EncryKey));
+
+                return new CommonRspVo<>(JwtUtil.getTokenByJson(map,Token_EncryKey),ResponseCodeEnum.SUCCESS);
+            }
         }catch (Exception e){
             e.printStackTrace();
             LOGGER.error("接口异常");
         }
 
-        return new CommonRspVo<>(false,ResponseCodeEnum.SYSTEM_ERROR);
+        return new CommonRspVo<>(String.valueOf(false),ResponseCodeEnum.SYSTEM_ERROR);
     }
 }

@@ -5,6 +5,7 @@ import com.lingxue.model.util.JwtUtil;
 import com.lingxue.model.util.NotNullUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.StringUtils;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -12,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static com.lingxue.model.constants.CommonConstant.Login_Company_Key;
 import static com.lingxue.model.constants.CommonConstant.Token_EncryKey;
 
 /**
@@ -51,13 +51,17 @@ public class AuthenFilter implements Filter {
             String token = request.getHeader("token");
 
             //判断是否为null
-            if (notNullUtil.notNullCheck(token,"AuthenFilter_token")){
+            if (StringUtils.isEmpty(token)){
+                if("login".equals(request.getRequestURL().substring(request.getRequestURL().lastIndexOf("/") + 1))){  //若是登陆直接放行
+                    filterChain.doFilter(servletRequest,servletResponse);
+                    return;
+                }
                 LOGGER.info("无token");
                 return;
             }
 
             //jwt验证
-            SysCompany sysCompany = JwtUtil.getValByT(token,Token_EncryKey, Login_Company_Key,SysCompany.class);
+            SysCompany sysCompany = JwtUtil.getValByT(token,Token_EncryKey,SysCompany.class);
 
             //校验
             if (sysCompany == null){
