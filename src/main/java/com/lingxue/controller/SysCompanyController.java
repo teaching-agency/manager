@@ -117,6 +117,8 @@ public class SysCompanyController {
 
         Wrapper<SysCompany> sysCompanyQueryWrapper = new QueryWrapper<>(sysCompany);
 
+        SysCompany sysCompany1 = iSysCompanyService.getOne(sysCompanyQueryWrapper);
+
         //判断必传项是否为null
         NotNullUtil<SysCompany,String> notNullUtil = new NotNullUtil<>();
 
@@ -125,7 +127,7 @@ public class SysCompanyController {
 
         try {
             //判断是否存在
-            if (iSysCompanyService.getOne(sysCompanyQueryWrapper) != null){
+            if (sysCompany1 != null){
                 //存放token
                 Map<String,Object> map = new HashMap<>();
                 map.put(Login_Company_Key,sysCompany);
