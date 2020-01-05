@@ -1,9 +1,9 @@
 spring:
   datasource:
     hikari:
-      jdbc-url: jdbc:mysql://192.168.214.1:3306/manager?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+      jdbc-url: jdbc:mysql://47.98.102.74:3306/manager?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
       username: root
-      password:
+      password: root
       driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://192.168.214.1:3306/manager?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
   #163邮箱配置
