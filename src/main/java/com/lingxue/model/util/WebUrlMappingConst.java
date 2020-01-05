@@ -19,4 +19,23 @@ public class WebUrlMappingConst {
     public static final String URL_COMPANY_LOGIN = URL_COMPANY + "login";  //登陆
 
     public static final String URL_COMPANY_REGISTERED = URL_COMPANY + "registered";  //注册
+
+    /**
+     *加盟用户
+     */
+    private static final String URL_USER = "/user/";
+
+    public static final String URL_USER_INFO = URL_USER + "info";  //用户信息
+
+    public static final String URL_USER_PAGE = URL_USER + "page";  //分页
+
+    public static final String URL_USER_ADD = URL_USER + "add";  //添加
+
+    public static final String URL_USER_UPDATE = URL_USER + "update";   //编辑
+
+    public static final String URL_USER_DELETE = URL_USER + "delete";   //删除
+
+    public static final String URL_USER_EXPORT = URL_USER + "export"; //用户数据导出
+
+    public static final String URL_USER_IMPORT = URL_USER + "import";  //用户导入功能
 }
