@@ -23,3 +23,6 @@ server:
 #自定义通用值
 customize:
   emailTo: 1277383416@qq.com
+logging:
+  level:
+    root: debug
