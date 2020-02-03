@@ -25,4 +25,4 @@ customize:
   emailTo: 1277383416@qq.com
 logging:
   level:
-    root: debug
+    root: info #在家我将debug修改成info，记得改回~~~

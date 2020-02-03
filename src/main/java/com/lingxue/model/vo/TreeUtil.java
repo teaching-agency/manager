@@ -94,9 +94,9 @@ public class TreeUtil {
 			node.setPath(menu.getPath());
 			node.setCode(menu.getPermission());
 			node.setLabel(menu.getName());
-			node.setComponent(menu.getComponent());
+			//node.setComponent(menu.getComponent());
 			node.setIcon(menu.getIcon());
-			node.setKeepAlive(menu.getKeepAlive());
+			//node.setKeepAlive(menu.getKeepAlive());
 			trees.add(node);
 		}
 		return TreeUtil.buildByLoop(trees, root);
