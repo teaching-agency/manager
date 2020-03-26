@@ -5,6 +5,8 @@ import com.lingxue.model.common.CommonRspVo;
 import com.lingxue.model.common.MyPage;
 import com.lingxue.model.entity.SysMenu;
 import com.lingxue.service.ISysMenuService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +23,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/sys-menu")
 public class SysMenuController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(SysMenuController.class);
 
     @Autowired
     private ISysMenuService sysMenuService;
@@ -45,6 +49,7 @@ public class SysMenuController {
     */
     @RequestMapping("/page")
     public IPage<SysMenu> page(@RequestParam Map<String, Object> params) {
+        LOGGER.info("成功进入mennus！！！！");
         return sysMenuService.page(new MyPage<>(params));
     }
 
