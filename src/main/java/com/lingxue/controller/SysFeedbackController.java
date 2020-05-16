@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.Map;
 
 import static com.lingxue.model.util.WebUrlMappingConst.*;
@@ -47,7 +48,7 @@ public class SysFeedbackController extends BaseController {
      * * @return : com.lingxue.model.common.CommonRspVo<java.lang.Boolean>
      */
     @PostMapping(value = ADD_FEEDBACK)
-    public CommonRspVo<Boolean> saveFeedback(AddFeedbackDTO addFeedbackDTO){
+    public CommonRspVo<Boolean> saveFeedback(@RequestBody AddFeedbackDTO addFeedbackDTO){
         LOGGER.info("成功进入新增反馈信息接口，名称" + "");
 
         Boolean b = StringUtil.isEmpty(String.valueOf(addFeedbackDTO.getUserId())) || StringUtil.isEmpty(String.valueOf(addFeedbackDTO.getCompanyId()));
@@ -59,6 +60,7 @@ public class SysFeedbackController extends BaseController {
         try {
             SysFeedBack sysFeedBack = new SysFeedBack();
             addFeedbackDTO.setStatus("0");
+            addFeedbackDTO.setCreateTime(new Date());
             BeanUtils.copyProperties(addFeedbackDTO,sysFeedBack);
             return new CommonRspVo<>(iSysFeedbackService.save(sysFeedBack));
         }catch (Exception e){
