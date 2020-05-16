@@ -2,7 +2,7 @@ package com.lingxue.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lingxue.mapper.SysCompanyMapper;
-import com.lingxue.model.entity.SysCompany;
+import com.lingxue.model.pojo.entity.SysCompany;
 import com.lingxue.service.ISysCompanyService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

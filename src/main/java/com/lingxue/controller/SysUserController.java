@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.lingxue.model.common.CommonRspVo;
 import com.lingxue.model.common.MyPage;
 import com.lingxue.model.constants.ResponseCodeEnum;
-import com.lingxue.model.entity.SysUser;
+import com.lingxue.model.pojo.entity.SysUser;
 import com.lingxue.model.util.StringUtil;
 import com.lingxue.service.ISysUserService;
 import org.springframework.beans.factory.annotation.Autowired;

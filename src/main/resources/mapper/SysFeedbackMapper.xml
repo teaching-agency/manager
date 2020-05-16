@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingxue.mapper.SysFeedbackMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lingxue.model.pojo.entity.SysFeedBack">
+        <id column="FEEDBACK_ID" property="feedbackId" />
+        <result column="CONTENT" property="content" />
+        <result column="USER_ID" property="userId" />
+        <result column="COMPANY_ID" property="companyId" />
+        <result column="IMG" property="images" />
+        <result column="SOLVE_CONTENT" property="solveContent" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="STATUS" property="status" />
+        <result column="END_TIME" property="endTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        FEEDBACK_ID,CONTENT,USER_ID,COMPANY_ID,IMG,SOLVE_CONTENT,CREATE_TIME,STATUS,END_TIME
+    </sql>
+</mapper>

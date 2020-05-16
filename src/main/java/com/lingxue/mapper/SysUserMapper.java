@@ -3,9 +3,9 @@ package com.lingxue.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.lingxue.model.dto.UserDTO;
-import com.lingxue.model.entity.SysUser;
-import com.lingxue.model.vo.UserVO;
+import com.lingxue.model.pojo.dto.UserDTO;
+import com.lingxue.model.pojo.entity.SysUser;
+import com.lingxue.model.pojo.vo.UserVO;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.lingxue.model.dto;
+package com.lingxue.model.pojo.dto;
 
-import com.lingxue.model.entity.SysRole;
+import com.lingxue.model.pojo.entity.SysRole;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

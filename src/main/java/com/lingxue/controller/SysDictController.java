@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.lingxue.model.common.CommonRspVo;
 import com.lingxue.model.common.MyPage;
 import com.lingxue.model.constants.ResponseCodeEnum;
-import com.lingxue.model.entity.SysDict;
+import com.lingxue.model.pojo.entity.SysDict;
 import com.lingxue.service.ISysDictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

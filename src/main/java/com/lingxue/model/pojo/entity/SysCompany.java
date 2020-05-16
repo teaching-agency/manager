@@ -1,9 +1,10 @@
-package com.lingxue.model.entity;
+package com.lingxue.model.pojo.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.lingxue.model.base.BaseEntity;
 import lombok.*;
 import lombok.experimental.Accessors;
 
@@ -27,7 +28,7 @@ public class SysCompany extends BaseEntity {
      *公司id
      */
     @TableId(value = "COMPANY_ID", type = IdType.AUTO)
-    private Integer companyId;
+    private Long companyId;
 
     /**
      *公司名称

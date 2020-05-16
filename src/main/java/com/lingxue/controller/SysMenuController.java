@@ -3,7 +3,7 @@ package com.lingxue.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.lingxue.model.common.CommonRspVo;
 import com.lingxue.model.common.MyPage;
-import com.lingxue.model.entity.SysMenu;
+import com.lingxue.model.pojo.entity.SysMenu;
 import com.lingxue.service.ISysMenuService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

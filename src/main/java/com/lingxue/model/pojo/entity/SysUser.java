@@ -1,9 +1,10 @@
-package com.lingxue.model.entity;
+package com.lingxue.model.pojo.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.lingxue.model.base.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -24,7 +25,7 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("user")
-public class SysUser extends BaseEntity{
+public class SysUser extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
@@ -32,7 +33,7 @@ public class SysUser extends BaseEntity{
      * 主键ID
      */
     @TableId(value = "USER_ID", type = IdType.AUTO)
-    private Integer userId;
+    private Long userId;
 
     /**
      *用户名

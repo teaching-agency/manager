@@ -3,7 +3,7 @@
 <mapper namespace="com.lingxue.mapper.SysCompanyMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.lingxue.model.entity.SysCompany">
+    <resultMap id="BaseResultMap" type="com.lingxue.model.pojo.entity.SysCompany">
         <id column="COMPANY_ID" property="companyId" />
         <result column="COMPANY_NAME" property="companyName" />
         <result column="ADDRESS" property="address" />

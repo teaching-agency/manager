@@ -1,7 +1,7 @@
 package com.lingxue.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.lingxue.model.entity.SysUserRole;
+import com.lingxue.model.pojo.entity.SysUserRole;
 import org.apache.ibatis.annotations.Param;
 
 /**

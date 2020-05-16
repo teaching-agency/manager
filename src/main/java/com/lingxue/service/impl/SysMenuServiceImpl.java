@@ -2,7 +2,7 @@ package com.lingxue.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lingxue.mapper.SysMenuMapper;
-import com.lingxue.model.entity.SysMenu;
+import com.lingxue.model.pojo.entity.SysMenu;
 import com.lingxue.service.ISysMenuService;
 import org.springframework.stereotype.Service;
 

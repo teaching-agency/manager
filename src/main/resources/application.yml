@@ -5,7 +5,8 @@ spring:
       username: root
       password: root
       driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.214.1:3306/manager?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+    #url: jdbc:mysql://192.168.214.1:3306/manager?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://47.98.102.74:3306/manager?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
   #163邮箱配置
   mail:
     host: smtp.163.com #邮箱配置地址
@@ -23,6 +24,7 @@ server:
 #自定义通用值
 customize:
   emailTo: 1277383416@qq.com
+  defaultUserId: admin
 logging:
   config: classpath:environment/dev/logback.xml
   levels: info

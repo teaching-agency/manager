@@ -1,4 +1,4 @@
-package com.lingxue.model.dto;
+package com.lingxue.model.pojo.dto;
 
 import lombok.Data;
 
@@ -11,9 +11,9 @@ import java.util.List;
  */
 @Data
 public class TreeNode {
-	protected int id;
-	protected int parentId;
-	protected List<TreeNode> children = new ArrayList<TreeNode>();
+	protected Integer id;
+	protected Integer parentId;
+	protected List<TreeNode> children = new ArrayList<>();
 
 	public void add(TreeNode node) {
 		children.add(node);

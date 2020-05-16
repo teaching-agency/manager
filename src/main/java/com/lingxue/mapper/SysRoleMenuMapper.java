@@ -1,7 +1,7 @@
 package com.lingxue.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.lingxue.model.entity.SysRoleMenu;
+import com.lingxue.model.pojo.entity.SysRoleMenu;
 
 /**
  * <p>

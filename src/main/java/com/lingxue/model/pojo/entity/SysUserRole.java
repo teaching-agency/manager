@@ -1,4 +1,4 @@
-package com.lingxue.model.entity;
+package com.lingxue.model.pojo.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;

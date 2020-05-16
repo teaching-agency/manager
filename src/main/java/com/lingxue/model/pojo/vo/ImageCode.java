@@ -1,4 +1,4 @@
-package com.lingxue.model.vo;
+package com.lingxue.model.pojo.vo;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.lingxue.model.entity;
+package com.lingxue.model.base;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
@@ -18,7 +18,7 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = false)
 @ToString
 @Accessors(chain = true)
-public class BaseEntity extends Model<BaseEntity>{
+public abstract class BaseEntity extends Model<BaseEntity>{
 
     @TableField(value = "CREATE_TIME")
     private Date createTime;

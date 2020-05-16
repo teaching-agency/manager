@@ -1,6 +1,6 @@
 package com.lingxue.model.filter;
 
-import com.lingxue.model.entity.SysCompany;
+import com.lingxue.model.pojo.entity.SysCompany;
 import com.lingxue.model.util.JwtUtil;
 import com.lingxue.model.util.NotNullUtil;
 import org.slf4j.Logger;

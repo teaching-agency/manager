@@ -1,6 +1,6 @@
-package com.lingxue.model.vo;
+package com.lingxue.model.pojo.vo;
 
-import com.lingxue.model.entity.SysRole;
+import com.lingxue.model.pojo.entity.SysRole;
 import lombok.Data;
 
 import java.io.Serializable;

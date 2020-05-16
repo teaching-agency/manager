@@ -1,7 +1,7 @@
 package com.lingxue.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.lingxue.model.entity.SysMenu;
+import com.lingxue.model.pojo.entity.SysMenu;
 
 /**
  * <p>

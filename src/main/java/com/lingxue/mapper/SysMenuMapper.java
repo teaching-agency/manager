@@ -1,8 +1,8 @@
 package com.lingxue.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.lingxue.model.entity.SysMenu;
-import com.lingxue.model.vo.MenuVO;
+import com.lingxue.model.pojo.entity.SysMenu;
+import com.lingxue.model.pojo.vo.MenuVO;
 
 import java.util.List;
 

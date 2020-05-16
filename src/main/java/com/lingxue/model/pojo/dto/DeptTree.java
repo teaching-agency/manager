@@ -1,4 +1,4 @@
-package com.lingxue.model.dto;
+package com.lingxue.model.pojo.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

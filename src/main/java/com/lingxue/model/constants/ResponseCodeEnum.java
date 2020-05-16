@@ -24,7 +24,12 @@ public enum ResponseCodeEnum {
     /**
      *验证码时间校验
      */
-    SYSTEM_CODE_TIME_OUT("9997","SYSTEM_CODE_TIME_OUT"),
+    SYSTEM_CODE_TIME_OUT("9996","SYSTEM_CODE_TIME_OUT"),
+
+    /**
+     *此状态不允许操作
+     */
+    SYSTEM_ERROR_STASTUS("9995","SYSTEM_ERROR_STASTUS"),
 
     /**
      * mysql 相关错误，可在8000---9000添加详细错误码

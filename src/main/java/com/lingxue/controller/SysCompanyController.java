@@ -2,10 +2,9 @@ package com.lingxue.controller;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.segments.MergeSegments;
 import com.lingxue.model.common.CommonRspVo;
 import com.lingxue.model.constants.ResponseCodeEnum;
-import com.lingxue.model.entity.SysCompany;
+import com.lingxue.model.pojo.entity.SysCompany;
 import com.lingxue.model.util.JwtUtil;
 import com.lingxue.model.util.NotNullUtil;
 import com.lingxue.service.ISysCompanyService;

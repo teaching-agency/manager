@@ -1,6 +1,6 @@
-package com.lingxue.model.dto;
+package com.lingxue.model.pojo.dto;
 
-import com.lingxue.model.vo.MenuVO;
+import com.lingxue.model.pojo.vo.MenuVO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

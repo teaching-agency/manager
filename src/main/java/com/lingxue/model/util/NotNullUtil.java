@@ -1,6 +1,6 @@
 package com.lingxue.model.util;
 
-import com.lingxue.model.entity.SysCompany;
+import com.lingxue.model.pojo.entity.SysCompany;
 import org.springframework.util.StringUtils;
 
 /**

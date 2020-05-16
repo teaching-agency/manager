@@ -1,6 +1,6 @@
-package com.lingxue.model.dto;
+package com.lingxue.model.pojo.dto;
 
-import com.lingxue.model.entity.SysUser;
+import com.lingxue.model.pojo.entity.SysUser;
 import lombok.Data;
 
 import java.io.Serializable;

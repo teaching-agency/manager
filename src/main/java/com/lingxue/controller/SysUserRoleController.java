@@ -3,7 +3,7 @@ package com.lingxue.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.lingxue.model.common.CommonRspVo;
 import com.lingxue.model.common.MyPage;
-import com.lingxue.model.entity.SysUserRole;
+import com.lingxue.model.pojo.entity.SysUserRole;
 import com.lingxue.service.ISysUserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

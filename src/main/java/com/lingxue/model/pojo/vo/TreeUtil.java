@@ -1,8 +1,8 @@
-package com.lingxue.model.vo;
+package com.lingxue.model.pojo.vo;
 
-import com.lingxue.model.dto.MenuTree;
-import com.lingxue.model.dto.TreeNode;
-import com.lingxue.model.entity.SysMenu;
+import com.lingxue.model.pojo.dto.MenuTree;
+import com.lingxue.model.pojo.dto.TreeNode;
+import com.lingxue.model.pojo.entity.SysMenu;
 import lombok.experimental.UtilityClass;
 
 import java.util.ArrayList;

@@ -38,4 +38,17 @@ public class WebUrlMappingConst {
     public static final String URL_USER_EXPORT = URL_USER + "export"; //用户数据导出
 
     public static final String URL_USER_IMPORT = URL_USER + "import";  //用户导入功能
+
+    /**
+     *反馈信息
+     */
+    private static final String FEEDBACK = "/feedback";
+
+    public static final String ADD_FEEDBACK =  "/add" + FEEDBACK ; //新增反馈
+
+    public static final String DELETE_FEEDBACK =  "/delete" + FEEDBACK ; //删除反馈
+
+    public static final String UPDATE_FEEDBACK =  "/update" + FEEDBACK ; //更改反馈
+
+    public static final String GET_PAGE_FEEDBACK =  "/getPageBy" + FEEDBACK ; //更改反馈
 }
