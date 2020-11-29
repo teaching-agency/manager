@@ -99,7 +99,7 @@ public class SysCompany extends BaseEntity {
     /**
      *验证码：只做用户注册一次使用，不加以保存
      */
-    private String verifyCode;
+    //private String verifyCode;
 
     @Override
     protected Serializable pkVal() {

@@ -62,8 +62,8 @@ public class SysCompanyController {
         String emailCode = (String) session.getAttribute("emailCode");
 
         //判断验证码是否超时
-        if(!sysCompany.getVerifyCode().equals(emailCode))
-            return new CommonRspVo<>(false,ResponseCodeEnum.SYSTEM_CODE_TIME_OUT);
+        /*if(!sysCompany.getVerifyCode().equals(emailCode))
+            return new CommonRspVo<>(false,ResponseCodeEnum.SYSTEM_CODE_TIME_OUT);*/
 
         //判断是否已经注册过此企业
         if (iSysCompanyService.getById(sysCompany.getCompanyUserIdCard()) != null)
@@ -117,12 +117,6 @@ public class SysCompanyController {
         Wrapper<SysCompany> sysCompanyQueryWrapper = new QueryWrapper<>(sysCompany);
 
         SysCompany sysCompany1 = iSysCompanyService.getOne(sysCompanyQueryWrapper);
-
-        //判断必传项是否为null
-        NotNullUtil<SysCompany,String> notNullUtil = new NotNullUtil<>();
-
-        if (notNullUtil.notNullCheck(sysCompany,"login"))
-            return new CommonRspVo<>(String.valueOf(false),ResponseCodeEnum.SYSTEM_ERROR_NULL);
 
         try {
             //判断是否存在
